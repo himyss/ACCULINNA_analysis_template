@@ -20,8 +20,8 @@ find_package(ROOT REQUIRED)
 # Define useful ROOT functions and macros (e.g. ROOT_GENERATE_DICTIONARY)
 include(${ROOT_USE_FILE})
 
-include_directories(/home/evovch/Documents/ACCULINNA_go4_user_library/install/include/)
-include_directories(/home/evovch/Documents/ACCULINNA_go4_user_library/install/include/data/)
+include_directories(/media/user/work/software/ACCULINNA_go4_user_library/install/include/)
+include_directories(/media/user/work/software/ACCULINNA_go4_user_library/install/include/data/)
 
 # =============================================================================
 

@@ -21,6 +21,10 @@ TestAnalysis::~TestAnalysis()
 	if (fSubElements) { delete [] fSubElements; fSubElements = nullptr; }
 }
 
+//TestAnalysis::Init
+// used only once for the whole input tree
+// Establishes a correspondence between the input tree and the TestAnalysis stations, which contains TClonesArray with signals
+// (similar to SetBranchAdress)
 void TestAnalysis::Init(DetEventFull* curEvent)
 {
 	fNsubElems = curEvent->getNElements();
@@ -53,6 +57,7 @@ void TestAnalysis::Init(DetEventFull* curEvent)
 	}
 }
 
+// processing single event data
 void TestAnalysis::ProcessEvent(DetEventFull* curEvent)
 {
 	TClonesArray* CsI_R_clar = fSubsubEl_CsI_R->GetDetMessages();
