@@ -9,6 +9,8 @@ class TGo4EventElement;
 class DetEventFull;
 class DetEventStation;
 
+class TClonesArray;
+
 class TestAnalysis : public TObject
 {
 public:
@@ -17,32 +19,25 @@ public:
 
 	void Init(DetEventFull* curEvent);
 
-	void ProcessEvent(DetEventFull* curEvent);
+	void ProcessEvent();
 
 private:
 
-	Short_t fNsubElems;
+	const TClonesArray* fCsI_R_clar;
+	const TClonesArray* fSQX_R_clar;
+	const TClonesArray* fSQY_R_clar;
+	const TClonesArray* ftCsI_R_clar;
+	const TClonesArray* ftSQX_R_clar;
+	const TClonesArray* ftSQY_R_clar;
+	const TClonesArray* fCsI_L_clar;
+	const TClonesArray* fSQX_L_clar;
+	const TClonesArray* fSQY_L_clar;
+	const TClonesArray* ftCsI_L_clar;
+	const TClonesArray* ftSQX_L_clar;
+	const TClonesArray* ftSQY_L_clar;
+	const TClonesArray* ftSQ300_clar;
+	const TClonesArray* fSQ300_clar;
 
-	TGo4EventElement** fSubElements; //[fNsubElems]
-
-	TGo4CompositeEvent* fRteleSubEl;
-	TGo4CompositeEvent* fLteleSubEl;
-
-	DetEventStation* fSubsubEl_CsI_R;
-	DetEventStation* fSubsubEl_SQX_R;
-	DetEventStation* fSubsubEl_SQY_R;
-	DetEventStation* fSubsubEl_tCsI_R;
-	DetEventStation* fSubsubEl_tSQX_R;
-	DetEventStation* fSubsubEl_tSQY_R;
-
-	DetEventStation* fSubsubEl_CsI_L;
-	DetEventStation* fSubsubEl_SQX_L;
-	DetEventStation* fSubsubEl_SQY_L;
-	DetEventStation* fSubsubEl_tCsI_L;
-	DetEventStation* fSubsubEl_tSQX_L;
-	DetEventStation* fSubsubEl_tSQY_L;
-	DetEventStation* fSubsubEl_tSQ300;
-	DetEventStation* fSubsubEl_SQ300;
 
 	ClassDef(TestAnalysis, 1);
 };
