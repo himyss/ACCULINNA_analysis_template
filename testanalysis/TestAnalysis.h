@@ -26,6 +26,7 @@ private:
 	TGo4EventElement** fSubElements; //[fNsubElems]
 
 	TGo4CompositeEvent* fRteleSubEl;
+	TGo4CompositeEvent* fLteleSubEl;
 
 	DetEventStation* fSubsubEl_CsI_R;
 	DetEventStation* fSubsubEl_SQX_R;
@@ -33,6 +34,15 @@ private:
 	DetEventStation* fSubsubEl_tCsI_R;
 	DetEventStation* fSubsubEl_tSQX_R;
 	DetEventStation* fSubsubEl_tSQY_R;
+
+	DetEventStation* fSubsubEl_CsI_L;
+	DetEventStation* fSubsubEl_SQX_L;
+	DetEventStation* fSubsubEl_SQY_L;
+	DetEventStation* fSubsubEl_tCsI_L;
+	DetEventStation* fSubsubEl_tSQX_L;
+	DetEventStation* fSubsubEl_tSQY_L;
+	DetEventStation* fSubsubEl_tSQ300;
+	DetEventStation* fSubsubEl_SQ300;
 
 	ClassDef(TestAnalysis, 1);
 };

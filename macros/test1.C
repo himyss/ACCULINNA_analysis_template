@@ -10,7 +10,7 @@
 
 TTree* GetTheTree(TFile* theFile, TString* treeName);
 
-void test1(TString inFilename="/media/user/work/data/exp1804/egorgo4/h5_14_0001.lmd.root",
+void test1(TString inFilename="/media/user/work/data/exp1804/tmp/h5_14_0001.lmd.root",
               TString inSetupConfigFilename="/media/user/work/software/ACCULINNA_go4_user_library/usr/setup2_exp201804.xml",
               UInt_t nEvents = 10)
 {
@@ -52,7 +52,7 @@ void test1(TString inFilename="/media/user/work/data/exp1804/egorgo4/h5_14_0001.
 	theAnalyser->Init(theEvent);
 
 	// Loop over the events
-	for (iEvent=1; iEvent<nEvents; iEvent++)
+	for (iEvent=1; iEvent<10; iEvent++)
 	{
 		cerr << "Event "<< iEvent
 		     << " =================================================================="
