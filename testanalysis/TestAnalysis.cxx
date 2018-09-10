@@ -2,12 +2,14 @@
 
 #include <iostream>
 using std::cerr;
+using std::cout;
 using std::endl;
 
 #include <TClonesArray.h>
 
 #include "DetEventFull.h"
 #include "DetEventStation.h"
+#include "DetMessage.h"
 
 TestAnalysis::TestAnalysis() :
 	TObject(),
@@ -93,20 +95,40 @@ void TestAnalysis::ProcessEvent(DetEventFull* curEvent)
 	TClonesArray* SQ300_clar = fSubsubEl_SQ300->GetDetMessages();
 
 
-	cerr << "CsI_R: " << CsI_R_clar->GetEntries() << endl;
-	cerr << "SQX_R: " << SQX_R_clar->GetEntries() << endl;
-	cerr << "SQY_R: " << SQY_R_clar->GetEntries() << endl;
-	cerr << "tCsI_R: " << tCsI_R_clar->GetEntries() << endl;
-	cerr << "tSQX_R: " << tSQX_R_clar->GetEntries() << endl;
-	cerr << "tSQY_R: " << tSQY_R_clar->GetEntries() << endl;
-	cerr << "CsI_L: " << CsI_L_clar->GetEntries() << endl;
-	cerr << "SQX_L: " << SQX_L_clar->GetEntries() << endl;
-	cerr << "SQY_L: " << SQY_L_clar->GetEntries() << endl;
-	cerr << "tCsI_L: " << tCsI_L_clar->GetEntries() << endl;
-	cerr << "tSQX_L: " << tSQX_L_clar->GetEntries() << endl;
-	cerr << "tSQY_L: " << tSQY_L_clar->GetEntries() << endl;
-	cerr << "SQ300: " << SQ300_clar->GetEntries() << endl;
-	cerr << "tSQ300: " << tSQ300_clar->GetEntries() << endl;
+	// cerr << "CsI_R: " << CsI_R_clar->GetEntries() << endl;
+	// cerr << "SQX_R: " << SQX_R_clar->GetEntries() << endl;
+	// cerr << "SQY_R: " << SQY_R_clar->GetEntries() << endl;
+	// cerr << "tCsI_R: " << tCsI_R_clar->GetEntries() << endl;
+	// cerr << "tSQX_R: " << tSQX_R_clar->GetEntries() << endl;
+	// cerr << "tSQY_R: " << tSQY_R_clar->GetEntries() << endl;
+	// cerr << "CsI_L: " << CsI_L_clar->GetEntries() << endl;
+	// cerr << "SQX_L: " << SQX_L_clar->GetEntries() << endl;
+	// cerr << "SQY_L: " << SQY_L_clar->GetEntries() << endl;
+	// cerr << "tCsI_L: " << tCsI_L_clar->GetEntries() << endl;
+	// cerr << "tSQX_L: " << tSQX_L_clar->GetEntries() << endl;
+	// cerr << "tSQY_L: " << tSQY_L_clar->GetEntries() << endl;
+	// cerr << "SQ300: " << SQ300_clar->GetEntries() << endl;
+	// cerr << "tSQ300: " << tSQ300_clar->GetEntries() << endl;
+
+
+	DetMessage *SQY_R[16];
+	for(Int_t i=0;i<16;i++){
+		SQY_R[i] = (DetMessage*)SQY_R_clar->At(i);
+		cout << SQY_R[i]->GetStChannel() << " "  << SQY_R[i]->GetValue() << endl;
+	}
+
+
+/*
+
+	Int_t GetStChannel(void) const { return fStChannel; }
+
+	Int_t GetValue(void) const { return fValue; }
+*/
+
+	// for(Int_t i = 0; i < SQX_R_clar->GetEntries(); i++){
+	// 	cout << (DetMessage*)SQX_R_clar->At(i)->GetStChannel() << " " <<(DetMessage*)SQX_R_clar->At(i)->GetValue() << endl;
+	// }
+
 
 }
 
