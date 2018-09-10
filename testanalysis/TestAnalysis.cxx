@@ -111,24 +111,11 @@ void TestAnalysis::ProcessEvent(DetEventFull* curEvent)
 	// cerr << "tSQ300: " << tSQ300_clar->GetEntries() << endl;
 
 
-	DetMessage *SQY_R[16];
-	for(Int_t i=0;i<16;i++){
+	DetMessage **SQY_R = new DetMessage*[SQY_R_clar->GetEntries()];
+	for(Int_t i=0;i<SQY_R_clar->GetEntries();i++){
 		SQY_R[i] = (DetMessage*)SQY_R_clar->At(i);
-		cout << SQY_R[i]->GetStChannel() << " "  << SQY_R[i]->GetValue() << endl;
+		// cout << SQY_R[i]->GetStChannel() << " "  << SQY_R[i]->GetValue() << endl;
 	}
-
-
-/*
-
-	Int_t GetStChannel(void) const { return fStChannel; }
-
-	Int_t GetValue(void) const { return fValue; }
-*/
-
-	// for(Int_t i = 0; i < SQX_R_clar->GetEntries(); i++){
-	// 	cout << (DetMessage*)SQX_R_clar->At(i)->GetStChannel() << " " <<(DetMessage*)SQX_R_clar->At(i)->GetValue() << endl;
-	// }
-
 
 }
 
